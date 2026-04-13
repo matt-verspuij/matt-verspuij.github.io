@@ -1,0 +1,321 @@
+<!DOCTYPE html> 
+<html> 
+
+    <head>
+        <style> 
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                margin-bottom: 50px;
+            }
+
+            .header {
+                background-color: #003b95;
+                text-align: left;
+                width: 100%;
+                height: 300px;
+                color: white;
+                box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+            }
+            .header img {
+                margin-left: 5px;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+            .menu {
+                color: white;
+                padding: 0 10px;
+                height: 75px;
+      
+            }
+            .button {
+                margin-left: 0;
+                margin-right: 0;
+                color: white;
+                background-color: #003b95;
+                padding: 15px 30px;
+                font-size: 16px;
+                border: none;
+                border-radius: 30px;
+                cursor: pointer;
+            }
+            .button button{ 
+                margin: 0;
+                padding: 0;
+            }
+            .button.visited {
+                border: 1px solid white;
+            }
+            .button:hover {
+                background-color: rgb(49, 76, 166);
+            }
+            .Title h1{
+                color: white;
+                margin: 0;
+                padding-top: 0;
+                margin-left: 15px;
+                font-size: 40px;
+            }
+            .Title h3{
+                color: white;
+                margin: 0;
+                padding-top: 10px;
+                margin-left: 20px;
+                font-size: 20px;
+            }
+            .box {
+                border: 1px solid #ccc;
+                height: 120px;
+                padding: 20px;
+                margin-left: 20px;
+                border-radius: 12px;
+                background-color: white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .Verblijfbox {
+                border: 1px solid #ccc;
+                height: 400px;
+                padding: 20px;
+                margin-left: 20px;
+                border-radius: 12px;
+                background-color: white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                cursor: pointer;
+            }
+            .NaastElkaar{
+                display: flex;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+            .Tekst {
+                margin-left: 20px; 
+                font-family: Futura, Arial, sans-serif;
+                font-size: 25px;
+            }
+            .IMG{
+                border-radius: 12px;
+            }
+            .zoek-container {
+                width: 60%;
+                border-radius: 25px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                display: flex;
+                margin: auto;
+                margin-top: 30px;
+            }
+
+            .zoek-container input {
+                flex: 1;
+                padding: 10px;
+                font-size: 16px;
+                border: none;
+                outline: none;
+            }
+
+            .zoek-container button {
+                padding: 10px 15px;
+                font-size: 16px;
+                border: none;
+                background-color: #4CAF50;
+                color: white;
+                cursor: pointer;
+            }
+
+        </style>
+
+     <title>Makoro.Mk</title>
+     <link rel="icon" href="images/Makoro.MK.FAVICON.png">
+     <script>
+        function toon_zoekresultaten() {
+            let tekst = document.getElementById('zoek').value.trim();
+            let verblijfboxes = document.querySelectorAll('.Verblijfbox');
+            let zoekRegex = null;
+            if (tekst) {
+                let escaped = tekst.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                zoekRegex = new RegExp(escaped, 'i');
+            }
+            verblijfboxes.forEach(function(box) {
+                let zoektekst = box.dataset.zoektekst || '';
+                if (zoekRegex && !zoektekst.match(zoekRegex)) {
+                    box.style.display = 'none';
+                } else {
+                    box.style.display = '';
+                }
+            });
+        }
+     </script>
+    </head> 
+
+    <body> 
+
+        <div class="header">
+            <img src="images/Atracties.png" width="225"/>
+            <div class="menu">
+                <button class="button" onclick="window.location.href='Makoro.Mk.Home.html'">Home</button>
+                <button class="button visited" onclick="window.location.href='Makoro.Mk.Verblijven.html'">Verblijven</button>
+                <button class="button" onclick="window.location.href='.html'">Attracties</button>
+            </div>
+            <div class="Title">
+                <h1>Vind je volgende verblijf</h1>
+                <h3>Zoek deals voor Hotels, Woningen en nog veel meer!</h3>
+            </div>
+        </div>
+        <form onsubmit="toon_zoekresultaten(); event.preventDefault(); return false;">
+            <div class="zoek-container">
+                <input id="zoek" type="text" placeholder="Waar ga je naartoe?">
+                <button type="submit">Zoek</button>
+            </div>
+        </form>
+
+        <div>
+            <h3 class="Tekst" style="font-size: 40px;">Aanbiedingen</h3>
+            <div class="NaastElkaar">
+                <div class="Verblijfbox" data-zoektekst="" style="background-color: #f5f5f5;">
+                    <img src="images/VogelpoelHotel1.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel Vogelpoel</b><br>
+                    <span style=" font-size: 15px;">In Kakker Beach</span>
+                    <br><br><h2 style="text-align: right;">€1.495,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="vogelnest" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf3.jpeg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel 't Vogelnest</b><br>
+                    <span style=" font-size: 15px;">In het heuvelachtige landschap van <br> Pyng Pyng City</span>
+                    <br><h2 style="text-align: right;">€560,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf4.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel 't Vogelhuus</b><br>
+                    <span style=" font-size: 15px;">Aan de Westelijke stranden van Bossche Bol</span>
+                    <br><br><h2 style="text-align: right;">€1.195,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="akbar" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf5.avif" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">Op de Akbar berg</span>
+                    <br><br><h2 style="text-align: right;">€495,- Per nacht</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <h3 class="Tekst" style="font-size: 40px; margin-top: 80px;">Hotels</h3>
+            <div class="NaastElkaar">
+                <div class="Verblijfbox" data-zoektekst="Kakker Beach" style="background-color: #f5f5f5;">
+                    <img src="images/VogelpoelHotel1.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel Vogelpoel</b><br>
+                    <span style=" font-size: 15px;">In Kakker Beach</span>
+                    <br><br><h2 style="text-align: right;">€1.495,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Kebab" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf9.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel des indes</b><br>
+                    <span style=" font-size: 15px;">In de binnenstad van Kebab</span>
+                    <br><br><h2 style="text-align: right;">€485,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Bossche Bol" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf4.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel 't Vogelhuus</b><br>
+                    <span style=" font-size: 15px;">Aan de Westelijke stranden van Bossche Bol</span>
+                    <br><br><h2 style="text-align: right;">€1.195,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Akbar berg" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf6.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel Troe</b><br>
+                    <span style=" font-size: 15px;">Op de Akbar berg</span>
+                    <br><br><h2 style="text-align: right;">€780,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Burgers" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf10.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel Paradise</b><br>
+                    <span style=" font-size: 15px;">Aan de westelijke kant van Burgers</span>
+                    <br><br><h2 style="text-align: right;">€475,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Pyng Pyng City" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf3.jpeg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel 't Vogelnest</b><br>
+                    <span style=" font-size: 15px;">In het heuvelachtige landschap van <br> Pyng Pyng City</span>
+                    <br><h2 style="text-align: right;">€560,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Mexicano" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf11.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel Deluxe</b><br>
+                    <span style=" font-size: 15px;">Aan de Oostelijke rand van Mexicano</span>
+                    <br><br><h2 style="text-align: right;">€865,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Kakker beach" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf12.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Hotel Kakker beach</b><br>
+                    <span style=" font-size: 15px;">In Kakker beach</span>
+                    <br><br><h2 style="text-align: right;">€1.225,- Per nacht</h2>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 class="Tekst" style="font-size: 40px; margin-top: 80px;">Apartementen</h3>
+            <div class="NaastElkaar">
+                <div class="Verblijfbox" data-zoektekst="Akbar" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf2.avif" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">In Akbar, met uitzicht op de Akbar berg</span>
+                    <br><br><h2 style="text-align: right;">€205,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Akbar berg" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf5.avif" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">Op de Akbar berg</span>
+                    <br><br><h2 style="text-align: right;">€495,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Bapao" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf8.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">In het Zuid Westen van Bapao in <br> camping 't Verspuijtje</span>
+                    <br><h2 style="text-align: right;">€295,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Mexicano" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf7.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">Aan de Oostelijke kant van Mexicano in <br> camping Verspuij</span>
+                    <br><h2 style="text-align: right;">€145,- Per nacht</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h3 class="Tekst" style="font-size: 40px; margin-top: 80px;">Vakantiehuisjes</h3>
+            <div class="NaastElkaar">
+                <div class="Verblijfbox" data-zoektekst="Akbar" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf2.avif" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">In Akbar, met uitzicht op de Akbar berg</span>
+                    <br><br><h2 style="text-align: right;">€205,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Akbar berg" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf5.avif" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">Op de Akbar berg</span>
+                    <br><br><h2 style="text-align: right;">€495,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Bapao" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf8.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">In het Zuid Westen van Bapao in <br> camping 't Verspuijtje</span>
+                    <br><h2 style="text-align: right;">€295,- Per nacht</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Mexicano" style="background-color: #f5f5f5;">
+                    <img src="images/Verblijf7.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
+                    <span style=" font-size: 15px;">Aan de Oostelijke kant van Mexicano in <br> camping Verspuij</span>
+                    <br><h2 style="text-align: right;">€145,- Per nacht</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+        </script>
+    </body> 
+
+</html> 
