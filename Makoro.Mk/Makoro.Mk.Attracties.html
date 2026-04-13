@@ -81,6 +81,7 @@
                 background-color: white;
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
                 cursor: pointer;
+                margin-top: 20px;
             }
             .NaastElkaar{
                 display: flex;
@@ -163,154 +164,64 @@
         </div>
         <form onsubmit="toon_zoekresultaten(); event.preventDefault(); return false;">
             <div class="zoek-container">
-                <input id="zoek" type="text" placeholder="Waar ga je naartoe?">
+                <input id="zoek" type="text" placeholder="Waar wil je naartoe?">
                 <button type="submit">Zoek</button>
             </div>
         </form>
 
-        <div>
-            <h3 class="Tekst" style="font-size: 40px;">Aanbiedingen</h3>
-            <div class="NaastElkaar">
-                <div class="Verblijfbox" data-zoektekst="" style="background-color: #f5f5f5;">
-                    <img src="images/VogelpoelHotel1.webp" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel Vogelpoel</b><br>
-                    <span style=" font-size: 15px;">In Kakker Beach</span>
-                    <br><br><h2 style="text-align: right;">€1.495,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="vogelnest" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf3.jpeg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel 't Vogelnest</b><br>
-                    <span style=" font-size: 15px;">In het heuvelachtige landschap van <br> Pyng Pyng City</span>
-                    <br><h2 style="text-align: right;">€560,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf4.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel 't Vogelhuus</b><br>
-                    <span style=" font-size: 15px;">Aan de Westelijke stranden van Bossche Bol</span>
-                    <br><br><h2 style="text-align: right;">€1.195,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="akbar" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf5.avif" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
-                    <span style=" font-size: 15px;">Op de Akbar berg</span>
-                    <br><br><h2 style="text-align: right;">€495,- Per nacht</h2>
-                </div>
-            </div>
-        </div>
-
 
         <div>
-            <h3 class="Tekst" style="font-size: 40px; margin-top: 80px;">Hotels</h3>
+            <h3 class="Tekst" style="font-size: 40px; margin-top: 80px;">Attracties, activiteiten en ervaringen</h3>
             <div class="NaastElkaar">
-                <div class="Verblijfbox" data-zoektekst="Kakker Beach" style="background-color: #f5f5f5;">
-                    <img src="images/VogelpoelHotel1.webp" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel Vogelpoel</b><br>
-                    <span style=" font-size: 15px;">In Kakker Beach</span>
-                    <br><br><h2 style="text-align: right;">€1.495,- Per nacht</h2>
+                <div class="Verblijfbox" data-zoektekst="Pyng Pyng City Kermis 2027"style="background-color: #f5f5f5;">
+                    <img src="images/Activiteit1.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Kermis 2027</b><br>
+                    <span style=" font-size: 15px;">Elk jaar is er een kermis in <br>Pyng Pyng City. Kom jij deze keer ook?</span>
+                    <br><h2 style="text-align: right;">€5,- P.P.</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Pyng Pyng City Atractiepark Yamelakaka" style="background-color: #f5f5f5;">
+                    <img src="images/Activiteit5.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Attractiepark Yamelakaka</b><br>
+                    <span style=" font-size: 15px;">Aan de noordelijke rand van Pyng Pyng City</span>
+                    <br><br><h2 style="text-align: right;">€145,- P.P.</h2>
+                </div>
+                <div class="Verblijfbox" data-zoektekst="Bapao" style="background-color: #f5f5f5;">
+                    <img src="images/Activiteit7.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Waterpark Boschloo</b><br>
+                    <span style=" font-size: 15px;">Aan de westelijke rand van Bapao</span>
+                    <br><br><h2 style="text-align: right;">€50,- P.P.</h2>
                 </div>
                 <div class="Verblijfbox" data-zoektekst="Kebab" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf9.webp" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel des indes</b><br>
-                    <span style=" font-size: 15px;">In de binnenstad van Kebab</span>
-                    <br><br><h2 style="text-align: right;">€485,- Per nacht</h2>
+                    <img src="images/Activiteit6.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Pretpark Pret</b><br>
+                    <span style=" font-size: 15px;">In Kebab</span>
+                    <br><br><h2 style="text-align: right;">€69,- P.P.</h2>
                 </div>
-                <div class="Verblijfbox" data-zoektekst="Bossche Bol" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf4.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel 't Vogelhuus</b><br>
-                    <span style=" font-size: 15px;">Aan de Westelijke stranden van Bossche Bol</span>
-                    <br><br><h2 style="text-align: right;">€1.195,- Per nacht</h2>
+                <div class="Verblijfbox" data-zoektekst="bergen Pyng Pyng City"style="background-color: #f5f5f5;">
+                    <img src="images/Activiteit2.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Kasteel Huis-Berg</b><br>
+                    <span style=" font-size: 15px;">Bezoek Kasteel Huis-Berg! <br>In de bergen van Pyng Pyng City. </span>
+                    <br><h2 style="text-align: right;">€20,- P.P.</h2>
                 </div>
-                <div class="Verblijfbox" data-zoektekst="Akbar berg" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf6.webp" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel Troe</b><br>
-                    <span style=" font-size: 15px;">Op de Akbar berg</span>
-                    <br><br><h2 style="text-align: right;">€780,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Burgers" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf10.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel Paradise</b><br>
-                    <span style=" font-size: 15px;">Aan de westelijke kant van Burgers</span>
-                    <br><br><h2 style="text-align: right;">€475,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Pyng Pyng City" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf3.jpeg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel 't Vogelnest</b><br>
-                    <span style=" font-size: 15px;">In het heuvelachtige landschap van <br> Pyng Pyng City</span>
-                    <br><h2 style="text-align: right;">€560,- Per nacht</h2>
+                <div class="Verblijfbox" data-zoektekst="Pythagyros" style="background-color: #f5f5f5;">
+                    <img src="images/Activiteit4.webp" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Wereld Museum</b><br>
+                    <span style=" font-size: 15px;">Breng een bezoekje aan <br>het Wereld Museum in Pythagyros!</span>
+                    <br><h2 style="text-align: right;">€10,- P.P.</h2>
                 </div>
                 <div class="Verblijfbox" data-zoektekst="Mexicano" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf11.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel Deluxe</b><br>
-                    <span style=" font-size: 15px;">Aan de Oostelijke rand van Mexicano</span>
-                    <br><br><h2 style="text-align: right;">€865,- Per nacht</h2>
+                    <img src="images/Activiteit8.jpg" width="310px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Natuurhistorisch museum</b><br>
+                    <span style=" font-size: 15px;">In Bitterbal</span>
+                    <br><h2 style="text-align: right;">€20,- P.P.</h2>
                 </div>
-                <div class="Verblijfbox" data-zoektekst="Kakker beach" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf12.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Hotel Kakker beach</b><br>
-                    <span style=" font-size: 15px;">In Kakker beach</span>
-                    <br><br><h2 style="text-align: right;">€1.225,- Per nacht</h2>
-                </div>
-            </div>
-        </div>
-        <div>
-            <h3 class="Tekst" style="font-size: 40px; margin-top: 80px;">Apartementen</h3>
-            <div class="NaastElkaar">
-                <div class="Verblijfbox" data-zoektekst="Kakker beach" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf13.webp" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Apartement</b><br>
-                    <span style=" font-size: 15px;">In Kakker beach met privé strand</span>
-                    <br><br><h2 style="text-align: right;">€1445,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Pyng Pyng City" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf14.webp" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Apartement</b><br>
-                    <span style=" font-size: 15px;">In het heuvelachtige landschap van <br>Pyng Pyng City</span>
-                    <br><h2 style="text-align: right;">€745,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Bapao" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf15.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Apartement</b><br>
-                    <span style=" font-size: 15px;">In het Zuid Westen van Bapao</span>
-                    <br><br><h2 style="text-align: right;">€865,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Akbar berg" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf16.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Apartement</b><br>
-                    <span style=" font-size: 15px;">Op de Akbar berg <br></span>
-                    <br><h2 style="text-align: right;">€1495,- Per nacht</h2>
-                </div>
-            </div>
-        </div>
-        
-        <div>
-            <h3 class="Tekst" style="font-size: 40px; margin-top: 80px;">Vakantiehuisjes</h3>
-            <div class="NaastElkaar">
-                <div class="Verblijfbox" data-zoektekst="Akbar" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf2.avif" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
-                    <span style=" font-size: 15px;">In Akbar, met uitzicht op de Akbar berg</span>
-                    <br><br><h2 style="text-align: right;">€205,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Akbar berg" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf5.avif" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
-                    <span style=" font-size: 15px;">Op de Akbar berg</span>
-                    <br><br><h2 style="text-align: right;">€495,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Bapao" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf8.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
-                    <span style=" font-size: 15px;">In het Zuid Westen van Bapao in <br> camping 't Verspuijtje</span>
-                    <br><h2 style="text-align: right;">€295,- Per nacht</h2>
-                </div>
-                <div class="Verblijfbox" data-zoektekst="Mexicano" style="background-color: #f5f5f5;">
-                    <img src="images/Verblijf7.jpg" width="300px" height="300px" class="IMG"><br>
-                    <b style=" font-size: 25px;">Vakantiehuis</b><br>
-                    <span style=" font-size: 15px;">Aan de Oostelijke kant van Mexicano in <br> camping Verspuij</span>
-                    <br><h2 style="text-align: right;">€145,- Per nacht</h2>
+                <div class="Verblijfbox" data-zoektekst="Loempia" style="background-color: #f5f5f5;">
+                    <img src="images/Activiteit10.jpg" width="300px" height="300px" class="IMG"><br>
+                    <b style=" font-size: 25px;">Kasteel 't grachtje</b><br>
+                    <span style=" font-size: 15px;">Een prachtig museum in Loempia</span>
+                    <br><br><h2 style="text-align: right;">€15,- P.P.</h2>
                 </div>
             </div>
         </div>
     </body> 
-
 </html> 
